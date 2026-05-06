@@ -3,6 +3,8 @@ package com.cyclone.dineflow.entity;
 import com.cyclone.dineflow.entity.data.MenuAvailability;
 import com.cyclone.dineflow.entity.data.MenuCategory;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
@@ -20,6 +22,8 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class MenuItem {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -42,6 +46,7 @@ public class MenuItem {
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
+    @Builder.Default
     private MenuAvailability menuAvailability =  MenuAvailability.AVAILABLE;
 
     @Column(nullable = false)

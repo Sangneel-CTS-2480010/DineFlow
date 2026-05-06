@@ -1,0 +1,21 @@
+package com.cyclone.dineflow.dto.responsedto;
+
+import com.cyclone.dineflow.entity.data.MenuCategory;
+
+/**
+ * [Detailed description of the class's responsibility]
+ * * @author 2480010
+ *
+ * @version 1.0
+ * @since 06-05-2026
+ */
+public record MenuItemResponseDto(
+        String name,
+        String categoryName,
+        String description,
+        Integer basePrice,
+        MenuCategory menuCategory,
+        Integer preparationTimeInMinutes,
+        String message
+)
+{}
